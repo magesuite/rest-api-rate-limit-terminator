@@ -1,0 +1,19 @@
+{
+  "name": "creativestyle/magesuite-rest-api-rate-limit-terminator",
+  "description": "Override for Magento Rest API items limit.",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "require": {
+    "magento/framework": ">=103.0.3"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "MageSuite\\RestApiRateLimitTerminator\\": ""
+    }
+  }
+}
