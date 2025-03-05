@@ -16,4 +16,18 @@
             <argument name="maxPageSize" xsi:type="number">999999</argument>
         </arguments>
     </type>
+    <type name="Magento\Quote\Api\CartRepositoryInterface">
+        <plugin name="cart_save_set_fingerprint"
+                type="MageSuite\RestApiRateLimitTerminator\Model\Quote\Model\QuoteRepository\SetFingerprint"
+                sortOrder="10"/>
+        <plugin name="cart_save_validate_fingerprint"
+                type="MageSuite\RestApiRateLimitTerminator\Model\Quote\Model\QuoteRepository\ValidateFingerprint"
+                sortOrder="20"/>
+    </type>
+    <type name="Magento\Checkout\Model\Session">
+        <plugin name="session_get_cart_validate_fingerprint"
+                type="MageSuite\RestApiRateLimitTerminator\Plugin\Checkout\Model\Session\ValidateFingerprint"
+                sortOrder="10"
+        />
+    </type>
 </config>
