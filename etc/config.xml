@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <rest_api_rate_limit_terminator>
+            <blocked_services>
+                <rest>
+                    <rest_item1>
+                        <service_url>/rest/V1/guest-carts</service_url>
+                        <http_method>POST</http_method>
+                        <service_acl>Magento_Checkout::checkout</service_acl>
+                    </rest_item1>
+                    <rest_item2>
+                        <service_url>/rest/V1/customers</service_url>
+                        <http_method>POST</http_method>
+                        <service_acl>Magento_Customer::create</service_acl>
+                    </rest_item2>
+                </rest>
+                <soap>
+                    <soap_item1>
+                        <service_url>quoteGuestCartManagementV1</service_url>
+                        <service_acl>Magento_Checkout::checkout</service_acl>
+                    </soap_item1>
+                    <soap_item2>
+                        <service_url>customerCustomerRepositoryV1</service_url>
+                        <service_acl>Magento_Customer::create</service_acl>
+                    </soap_item2>
+                </soap>
+            </blocked_services>
+            <checkout>
+                <enable_fingerprint_for_guests>0</enable_fingerprint_for_guests>
+                <fingerprint_ttl>1</fingerprint_ttl>
+                <guests_cart_items_limit>50</guests_cart_items_limit>
+                <authorized_cart_items_limit>50</authorized_cart_items_limit>
+            </checkout>
+        </rest_api_rate_limit_terminator>
+    </default>
+</config>

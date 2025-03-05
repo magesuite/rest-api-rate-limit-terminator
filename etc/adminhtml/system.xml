@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="rest_api_rate_limit_terminator" translate="label" type="text" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="0">
+            <label>REST Api Rate Limit Terminator</label>
+            <tab>magesuite</tab>
+            <resource>MageSuite_RestApiRateLimitTerminator::configuration</resource>
+            <group id="blocked_services" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                <label>Blocked services</label>
+                <field id="rest" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>REST</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                    <frontend_model>MageSuite\RestApiRateLimitTerminator\Block\Adminhtml\Form\Field\RestBlockedServices</frontend_model>
+                </field>
+                <field id="soap" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>SOAP</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                    <frontend_model>MageSuite\RestApiRateLimitTerminator\Block\Adminhtml\Form\Field\SoapBlockedServices</frontend_model>
+                </field>
+            </group>
+            <group id="checkout" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                <label>Checkout</label>
+                <field id="enable_fingerprint_for_guests" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Enable Fingerprint For Guests</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>When enabled user will be not able to create new quote if active one with the same fingerprint exists for guests.</comment>
+                </field>
+                <field id="fingerprint_ttl" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Fingerprint TTL</label>
+                    <comment>Value expressed in minutes (default 1) when fingerprint is valid.</comment>
+                </field>
+                <field id="guests_cart_items_limit" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Guests Cart Items Limit</label>
+                </field>
+                <field id="authorized_cart_items_limit" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Authorized Customers Cart Items Limit</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,28 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:MageSuite_Changelog:etc/changelog.xsd">
+    <module id="MageSuite_RestApiRateLimitTerminator" name="MageSuite_RestApiRateLimitTerminator">
+        <changelog>
+            <tag version="1.0.1" date="2023-10-01">
+                <entry>
+                    <type>FEAT</type>
+                    <overview>Terminate rest/soap endpoint for creating guest carts.</overview>
+                    <ticket_id>P2G-2461</ticket_id>
+                </entry>
+                <entry>
+                    <type>FEAT</type>
+                    <overview>Validation of guest cart creation based on fingerprint.</overview>
+                    <ticket_id>P2G-2461</ticket_id>
+                </entry>
+                <entry>
+                    <type>FEAT</type>
+                    <overview>Adding a limit on the number of products in the shopping basket for logged in and non-logged-in customers.</overview>
+                    <ticket_id>P2G-2461</ticket_id>
+                </entry>
+                <entry>
+                    <type>FEAT</type>
+                    <overview>Blocking the possibility of creating clients via the REST/SOAP API without prior authorisation</overview>
+                    <ticket_id>P2G-2461</ticket_id>
+                </entry>
+            </tag>
+        </changelog>
+    </module>
+</config>
