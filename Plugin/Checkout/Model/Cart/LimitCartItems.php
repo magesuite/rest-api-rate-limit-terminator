@@ -6,18 +6,15 @@ namespace MageSuite\RestApiRateLimitTerminator\Plugin\Checkout\Model\Cart;
 
 class LimitCartItems
 {
-    protected \Magento\Quote\Api\CartRepositoryInterface $quoteRepository;
     protected \Magento\Customer\Model\Session $customerSession;
     protected \MageSuite\RestApiRateLimitTerminator\Helper\Configuration $configuration;
 
     public function __construct(
         \MageSuite\RestApiRateLimitTerminator\Helper\Configuration $configuration,
-        \Magento\Quote\Api\CartRepositoryInterface $quoteRepository,
         \Magento\Customer\Model\Session $customerSession
     ) {
         $this->configuration = $configuration;
         $this->customerSession = $customerSession;
-        $this->quoteRepository = $quoteRepository;
     }
 
     public function beforeAddProduct(
