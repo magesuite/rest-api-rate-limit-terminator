@@ -5,4 +5,10 @@
         <plugin name="limit_cart_items_for_guests" type="MageSuite\RestApiRateLimitTerminator\Plugin\Checkout\Model\Cart\LimitCartItems" />
     </type>
 
+    <type name="MageSuite\RestApiRateLimitTerminator\Plugin\Checkout\Model\Cart\LimitCartItems">
+        <arguments>
+            <argument name="customerSession" xsi:type="object">Magento\Customer\Model\Session\Proxy</argument>
+        </arguments>
+    </type>
+
 </config>
